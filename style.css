@@ -1,0 +1,42 @@
+.tree ul {
+    list-style-type: none;
+    border-left: 1px solid;
+}
+
+.tree li span {
+    padding-left: 10px;
+    position: relative;
+}
+
+.tree li span::before{
+    position: absolute;
+    content: "";
+    width: 45px;
+    height: 0.5px;
+    background-color: black;
+    left: -40px;
+    bottom: 9px;
+}
+
+
+.tree li .tree__folder {
+    background: url(./img/close-folder.svg) no-repeat;
+    background-size: 15px;
+    padding-left: 20px;  
+    cursor: pointer;
+}
+
+.tree li .tree__folder.open {
+    background: url(./img/open-folder.svg) no-repeat;
+    background-size: 15px;
+    padding-left: 20px;  
+}
+
+
+.tree li .tree__folder ~ ul {
+    display: none;
+}
+
+.tree li .tree__folder.open ~ ul {
+    display: block;
+}
